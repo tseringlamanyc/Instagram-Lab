@@ -19,6 +19,7 @@
 		5224F9772415579C00B124F4 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 5224F9762415579C00B124F4 /* camera.json */; };
 		5224F97924155AAB00B124F4 /* UIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97824155AAB00B124F4 /* UIVC.swift */; };
 		5224F97D24155B3300B124F4 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97C24155B3300B124F4 /* MainTab.swift */; };
+		5224F97F2415A6E400B124F4 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97E2415A6E400B124F4 /* Alerts.swift */; };
 		52CF60192411A89D00F842C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF60182411A89D00F842C4 /* AppDelegate.swift */; };
 		52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF601A2411A89D00F842C4 /* SceneDelegate.swift */; };
 		52CF60202411A89D00F842C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CF601E2411A89D00F842C4 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		5224F9762415579C00B124F4 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
 		5224F97824155AAB00B124F4 /* UIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVC.swift; sourceTree = "<group>"; };
 		5224F97C24155B3300B124F4 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		5224F97E2415A6E400B124F4 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		52CF60152411A89D00F842C4 /* Instagram Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CF60182411A89D00F842C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CF601A2411A89D00F842C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				5224F971241552C200B124F4 /* UIImage.swift */,
 				5224F97824155AAB00B124F4 /* UIVC.swift */,
+				5224F97E2415A6E400B124F4 /* Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				5224F96A2415524D00B124F4 /* LoginVC.swift in Sources */,
 				5224F97924155AAB00B124F4 /* UIVC.swift in Sources */,
 				5224F96C2415526200B124F4 /* AuthServices.swift in Sources */,
+				5224F97F2415A6E400B124F4 /* Alerts.swift in Sources */,
 				5224F972241552C200B124F4 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,5 +12,6 @@ target 'Instagram Lab' do
     pod 'Firebase/Storage'
     pod 'lottie-ios'
     pod 'LGButton'
+    pod 'StatusAlert'
 
 end

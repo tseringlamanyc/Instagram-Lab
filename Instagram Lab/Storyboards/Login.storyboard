@@ -89,7 +89,17 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="loadingString" value="Logging in"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="loadingFontSize">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="loadingColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="E95-Nq-DNZ" eventType="valueChanged" id="xcJ-h1-W6q"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-i5-8zE" customClass="LGButton" customModule="LGButton">
                                         <rect key="frame" x="164" y="0.0" width="150" height="57"/>
@@ -113,12 +123,21 @@
                                                 <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpPressed:" destination="E95-Nq-DNZ" eventType="valueChanged" id="E71-Sw-88w"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="PDv-86-ZwL"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raH-cD-zGL">
+                                <rect key="frame" x="50" y="473" width="314" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -126,15 +145,18 @@
                             <constraint firstItem="qj5-lH-UaI" firstAttribute="top" secondItem="HAk-R5-AHq" secondAttribute="top" constant="7" id="3kA-X4-PPy"/>
                             <constraint firstItem="HAk-R5-AHq" firstAttribute="trailing" secondItem="TOI-Uc-vRb" secondAttribute="trailing" constant="50" id="4mY-CU-JDo"/>
                             <constraint firstItem="HAk-R5-AHq" firstAttribute="trailing" secondItem="ruk-qZ-7hr" secondAttribute="trailing" constant="50" id="9x6-VM-vmu"/>
+                            <constraint firstItem="raH-cD-zGL" firstAttribute="top" secondItem="ruk-qZ-7hr" secondAttribute="bottom" constant="23" id="HNl-Bg-izk"/>
                             <constraint firstItem="qj5-lH-UaI" firstAttribute="leading" secondItem="HAk-R5-AHq" secondAttribute="leading" constant="50" id="Ho9-jd-g2E"/>
                             <constraint firstItem="urR-1h-5Qm" firstAttribute="leading" secondItem="gnD-6e-gbI" secondAttribute="trailing" constant="8" id="JxN-D8-6KU"/>
                             <constraint firstItem="URr-dK-txn" firstAttribute="leading" secondItem="HAk-R5-AHq" secondAttribute="leading" constant="50" id="S1h-71-diK"/>
                             <constraint firstItem="TOI-Uc-vRb" firstAttribute="leading" secondItem="URr-dK-txn" secondAttribute="trailing" constant="8" id="T5B-Xw-jmd"/>
                             <constraint firstItem="urR-1h-5Qm" firstAttribute="top" secondItem="TOI-Uc-vRb" secondAttribute="bottom" constant="8" id="Vef-kT-3A3"/>
                             <constraint firstItem="TOI-Uc-vRb" firstAttribute="top" secondItem="qj5-lH-UaI" secondAttribute="bottom" constant="29" id="hMX-DX-XJt"/>
+                            <constraint firstItem="raH-cD-zGL" firstAttribute="leading" secondItem="HAk-R5-AHq" secondAttribute="leading" constant="50" id="hTf-EC-Y2u"/>
                             <constraint firstItem="gnD-6e-gbI" firstAttribute="leading" secondItem="HAk-R5-AHq" secondAttribute="leading" constant="50" id="jdv-hA-aRI"/>
                             <constraint firstItem="gnD-6e-gbI" firstAttribute="top" secondItem="URr-dK-txn" secondAttribute="bottom" constant="8" id="kWC-h8-NJ8"/>
                             <constraint firstItem="ruk-qZ-7hr" firstAttribute="leading" secondItem="HAk-R5-AHq" secondAttribute="leading" constant="50" id="r3r-hY-5ia"/>
+                            <constraint firstItem="HAk-R5-AHq" firstAttribute="trailing" secondItem="raH-cD-zGL" secondAttribute="trailing" constant="50" id="rPl-Qg-r58"/>
                             <constraint firstItem="ruk-qZ-7hr" firstAttribute="top" secondItem="gnD-6e-gbI" secondAttribute="bottom" constant="42" id="uFY-aN-uHo"/>
                             <constraint firstItem="HAk-R5-AHq" firstAttribute="trailing" secondItem="qj5-lH-UaI" secondAttribute="trailing" constant="50" id="uMZ-fy-4hA"/>
                             <constraint firstItem="HAk-R5-AHq" firstAttribute="trailing" secondItem="urR-1h-5Qm" secondAttribute="trailing" constant="50" id="xF1-BO-IGC"/>
@@ -142,7 +164,10 @@
                         <viewLayoutGuide key="safeArea" id="HAk-R5-AHq"/>
                     </view>
                     <connections>
+                        <outlet property="emailTF" destination="TOI-Uc-vRb" id="tfQ-Bi-nfB"/>
+                        <outlet property="errorLabel" destination="raH-cD-zGL" id="m9q-h3-bJ1"/>
                         <outlet property="login" destination="qj5-lH-UaI" id="7Tb-26-ahl"/>
+                        <outlet property="passTF" destination="urR-1h-5Qm" id="rfj-M2-dQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avD-8i-uVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
