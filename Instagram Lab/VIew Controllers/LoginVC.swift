@@ -41,6 +41,7 @@ class LoginVC: UIViewController {
     
     
     @IBAction func loginPressed(_ sender: LGButton) {
+        
         sender.isLoading = true
         guard let email = emailTF.text, !email.isEmpty, let password = passTF.text, !password.isEmpty else {
             showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Please fill all fields")
@@ -64,11 +65,12 @@ class LoginVC: UIViewController {
     }
     
     
-    @IBAction func signUpPressed(_ sender: LGButton) {
+    @IBAction func signupPressed(_ sender: LGButton) {
         guard let email = emailTF.text, !email.isEmpty, let password = passTF.text, !password.isEmpty else {
             showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Please fill all fields")
             return
         }
+        
         authSession.createNewUser(email: email, password: password) { [weak self] (result) in
             switch result {
             case .failure(let error):
@@ -82,7 +84,6 @@ class LoginVC: UIViewController {
                 }
             }
         }
-        
     }
     
     private func navigateToMainView() {

@@ -58,7 +58,7 @@
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Login"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
                                                 <real key="value" value="26"/>
                                             </userDefinedRuntimeAttribute>
@@ -98,7 +98,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="loginPressed:" destination="E95-Nq-DNZ" eventType="valueChanged" id="xcJ-h1-W6q"/>
+                                            <action selector="loginPressed:" destination="E95-Nq-DNZ" eventType="touchUpInside" id="Wad-80-ENh"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-i5-8zE" customClass="LGButton" customModule="LGButton">
@@ -124,7 +124,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="signUpPressed:" destination="E95-Nq-DNZ" eventType="valueChanged" id="E71-Sw-88w"/>
+                                            <action selector="signupPressed:" destination="E95-Nq-DNZ" eventType="touchUpInside" id="aik-NC-hsx"/>
                                         </connections>
                                     </view>
                                 </subviews>

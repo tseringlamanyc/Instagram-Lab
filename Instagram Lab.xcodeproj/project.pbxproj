@@ -20,6 +20,9 @@
 		5224F97924155AAB00B124F4 /* UIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97824155AAB00B124F4 /* UIVC.swift */; };
 		5224F97D24155B3300B124F4 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97C24155B3300B124F4 /* MainTab.swift */; };
 		5224F97F2415A6E400B124F4 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97E2415A6E400B124F4 /* Alerts.swift */; };
+		5224F9812415A8D100B124F4 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F9802415A8D100B124F4 /* FeedVC.swift */; };
+		5224F9832415A8E000B124F4 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F9822415A8E000B124F4 /* UploadVC.swift */; };
+		5224F9852415A8F900B124F4 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F9842415A8F900B124F4 /* ProfileVC.swift */; };
 		52CF60192411A89D00F842C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF60182411A89D00F842C4 /* AppDelegate.swift */; };
 		52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF601A2411A89D00F842C4 /* SceneDelegate.swift */; };
 		52CF60202411A89D00F842C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CF601E2411A89D00F842C4 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		5224F97824155AAB00B124F4 /* UIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVC.swift; sourceTree = "<group>"; };
 		5224F97C24155B3300B124F4 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		5224F97E2415A6E400B124F4 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		5224F9802415A8D100B124F4 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		5224F9822415A8E000B124F4 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
+		5224F9842415A8F900B124F4 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		52CF60152411A89D00F842C4 /* Instagram Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CF60182411A89D00F842C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CF601A2411A89D00F842C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 			children = (
 				5224F9692415524D00B124F4 /* LoginVC.swift */,
 				5224F97C24155B3300B124F4 /* MainTab.swift */,
+				5224F9802415A8D100B124F4 /* FeedVC.swift */,
+				5224F9822415A8E000B124F4 /* UploadVC.swift */,
+				5224F9842415A8F900B124F4 /* ProfileVC.swift */,
 			);
 			path = "VIew Controllers";
 			sourceTree = "<group>";
@@ -118,6 +127,13 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		5224F9862415A90C00B124F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		52CF600C2411A89D00F842C4 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +158,7 @@
 				5224F975241556E700B124F4 /* json */,
 				521145272415461A00758611 /* Model */,
 				52114526241545FF00758611 /* Services */,
+				5224F9862415A90C00B124F4 /* Views */,
 				52114524241545EC00758611 /* VIew Controllers */,
 				521145282415461F00758611 /* Storyboards */,
 				52114525241545F800758611 /* Extensions */,
@@ -290,12 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5224F9812415A8D100B124F4 /* FeedVC.swift in Sources */,
 				52CF60192411A89D00F842C4 /* AppDelegate.swift in Sources */,
+				5224F9852415A8F900B124F4 /* ProfileVC.swift in Sources */,
 				52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */,
 				5224F96E2415527200B124F4 /* DatabaseServices.swift in Sources */,
 				5224F9742415538900B124F4 /* InstaModel.swift in Sources */,
 				5224F97D24155B3300B124F4 /* MainTab.swift in Sources */,
 				5224F9702415528100B124F4 /* StorageServices.swift in Sources */,
+				5224F9832415A8E000B124F4 /* UploadVC.swift in Sources */,
 				5224F96A2415524D00B124F4 /* LoginVC.swift in Sources */,
 				5224F97924155AAB00B124F4 /* UIVC.swift in Sources */,
 				5224F96C2415526200B124F4 /* AuthServices.swift in Sources */,
