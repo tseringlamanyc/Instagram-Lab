@@ -7,9 +7,10 @@ target 'Instagram Lab' do
 
   # Pods for Instagram Lab
     pod 'Firebase/Auth'
-    pod 'Firebase/Analytics'
     pod 'Firebase/Firestore'
     pod 'FirebaseFirestoreSwift'
     pod 'Firebase/Storage'
+    pod 'lottie-ios'
+    pod 'LGButton'
 
 end

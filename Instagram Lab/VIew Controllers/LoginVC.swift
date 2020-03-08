@@ -7,24 +7,23 @@
 //
 
 import UIKit
+import Lottie
+import LGButton
 
 class LoginVC: UIViewController {
-
+    
+    @IBOutlet weak var login: AnimationView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        startLottie()
+    }
 
-        // Do any additional setup after loading the view.
+    private func startLottie() {
+        let animation = Animation.named("camera")
+        login.animation = animation
+        login.loopMode = .loop
+        login.play()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

@@ -16,6 +16,9 @@
 		5224F9702415528100B124F4 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F96F2415528100B124F4 /* StorageServices.swift */; };
 		5224F972241552C200B124F4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F971241552C200B124F4 /* UIImage.swift */; };
 		5224F9742415538900B124F4 /* InstaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F9732415538900B124F4 /* InstaModel.swift */; };
+		5224F9772415579C00B124F4 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 5224F9762415579C00B124F4 /* camera.json */; };
+		5224F97924155AAB00B124F4 /* UIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97824155AAB00B124F4 /* UIVC.swift */; };
+		5224F97D24155B3300B124F4 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224F97C24155B3300B124F4 /* MainTab.swift */; };
 		52CF60192411A89D00F842C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF60182411A89D00F842C4 /* AppDelegate.swift */; };
 		52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF601A2411A89D00F842C4 /* SceneDelegate.swift */; };
 		52CF60202411A89D00F842C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CF601E2411A89D00F842C4 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		5224F96F2415528100B124F4 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		5224F971241552C200B124F4 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5224F9732415538900B124F4 /* InstaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaModel.swift; sourceTree = "<group>"; };
+		5224F9762415579C00B124F4 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
+		5224F97824155AAB00B124F4 /* UIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVC.swift; sourceTree = "<group>"; };
+		5224F97C24155B3300B124F4 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		52CF60152411A89D00F842C4 /* Instagram Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CF60182411A89D00F842C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CF601A2411A89D00F842C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				5224F9692415524D00B124F4 /* LoginVC.swift */,
+				5224F97C24155B3300B124F4 /* MainTab.swift */,
 			);
 			path = "VIew Controllers";
 			sourceTree = "<group>";
@@ -68,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				5224F971241552C200B124F4 /* UIImage.swift */,
+				5224F97824155AAB00B124F4 /* UIVC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,6 +107,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		5224F975241556E700B124F4 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				5224F9762415579C00B124F4 /* camera.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		52CF600C2411A89D00F842C4 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +136,7 @@
 		52CF60172411A89D00F842C4 /* Instagram Lab */ = {
 			isa = PBXGroup;
 			children = (
+				5224F975241556E700B124F4 /* json */,
 				521145272415461A00758611 /* Model */,
 				52114526241545FF00758611 /* Services */,
 				52114524241545EC00758611 /* VIew Controllers */,
@@ -217,6 +234,7 @@
 				52CF60222411A8A800F842C4 /* Assets.xcassets in Resources */,
 				5224F9682415522F00B124F4 /* Login.storyboard in Resources */,
 				52CF60202411A89D00F842C4 /* Main.storyboard in Resources */,
+				5224F9772415579C00B124F4 /* camera.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +291,10 @@
 				52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */,
 				5224F96E2415527200B124F4 /* DatabaseServices.swift in Sources */,
 				5224F9742415538900B124F4 /* InstaModel.swift in Sources */,
+				5224F97D24155B3300B124F4 /* MainTab.swift in Sources */,
 				5224F9702415528100B124F4 /* StorageServices.swift in Sources */,
 				5224F96A2415524D00B124F4 /* LoginVC.swift in Sources */,
+				5224F97924155AAB00B124F4 /* UIVC.swift in Sources */,
 				5224F96C2415526200B124F4 /* AuthServices.swift in Sources */,
 				5224F972241552C200B124F4 /* UIImage.swift in Sources */,
 			);
