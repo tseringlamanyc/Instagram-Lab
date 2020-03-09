@@ -15,6 +15,7 @@ struct InstaModel {
     let photoURL: String
     let userName: String
     let userId: String
+    let userURL: String
 }
 
 extension InstaModel {
@@ -25,5 +26,6 @@ extension InstaModel {
         self.photoURL = dictionary["photoURL"] as? String ?? "no url"
         self.userName = dictionary["userName"] as? String ?? "no username"
         self.userId = dictionary["userId"] as? String ?? "no userId"
+        self.userURL = dictionary["userURL"] as? String ?? "no userURL"
     }
 }

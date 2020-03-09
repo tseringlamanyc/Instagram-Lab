@@ -13,5 +13,6 @@ target 'Instagram Lab' do
     pod 'lottie-ios'
     pod 'LGButton'
     pod 'StatusAlert'
+    pod 'Kingfisher'
 
 end

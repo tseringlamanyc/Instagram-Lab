@@ -11,6 +11,9 @@ import FirebaseFirestore
 
 class FeedVC: UIViewController {
 
+    @IBOutlet weak var feedCV: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

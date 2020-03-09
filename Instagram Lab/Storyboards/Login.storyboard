@@ -89,7 +89,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="loadingString" value="Logging in"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="loadingFontSize">
-                                                <real key="value" value="18"/>
+                                                <real key="value" value="13"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="loadingColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
