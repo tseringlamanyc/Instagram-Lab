@@ -15,10 +15,22 @@ class UploadVC: UIViewController {
     @IBOutlet weak var cameraView: AnimationView!
     @IBOutlet weak var libraryView: AnimationView!
     
+    private lazy var imagePickerController: UIImagePickerController = {
+        let ip = UIImagePickerController()
+        ip.delegate = self
+        return ip
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startLottie()
         startLottie2()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        startLottie2()
+        startLottie()
     }
     
     private func startLottie() {
@@ -45,4 +57,13 @@ class UploadVC: UIViewController {
         
     }
     
+}
+
+extension UploadVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError()
+        }
+        dismiss(animated: true)
+    }
 }

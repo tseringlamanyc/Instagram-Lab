@@ -36,24 +36,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzo-U4-Af9" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="20" y="165" width="374" height="198"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzo-U4-Af9" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="557" width="175" height="121"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="198" id="L5f-Ap-aZ5"/>
+                                    <constraint firstAttribute="height" constant="121" id="TR4-Hn-A0V"/>
+                                    <constraint firstAttribute="width" constant="175" id="b7E-Mf-dn7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-e2-dYm" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="219" y="557" width="175" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="QNF-Gw-uFj"/>
+                                    <constraint firstAttribute="width" constant="175" id="a3Q-8l-hha"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUG-la-QgS" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="87" y="371" width="240" height="80"/>
+                                <rect key="frame" x="20" y="698" width="175" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="6zz-n9-bmE"/>
-                                    <constraint firstAttribute="height" constant="80" id="ElQ-KU-eVY"/>
+                                    <constraint firstAttribute="width" constant="175" id="7lJ-iC-4s6"/>
+                                    <constraint firstAttribute="height" constant="50" id="eJF-4N-ipR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Camera"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
                                         <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,14 +76,14 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="44"/>
+                                        <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="camera.fill" catalog="system"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="leftImageHeight">
-                                        <real key="value" value="41"/>
+                                        <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="leftImageWidth">
-                                        <real key="value" value="47"/>
+                                        <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="leftImageColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,27 +93,41 @@
                                     <action selector="cameraPicked:" destination="dR8-5J-yyN" eventType="touchUpInside" id="wy4-3s-hTj"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8m-hI-Och">
+                                <rect key="frame" x="20" y="64" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c4-b4a">
+                                <rect key="frame" x="20" y="113" width="374" height="342"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgI-j6-Vtm">
+                                <rect key="frame" x="20" y="475" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WL-0F-GG9" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="87" y="676" width="240" height="74"/>
+                                <rect key="frame" x="219" y="698" width="175" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="YbA-ng-0Sf"/>
-                                    <constraint firstAttribute="width" constant="240" id="f8b-FZ-TLp"/>
+                                    <constraint firstAttribute="height" constant="50" id="GD6-iV-6wL"/>
+                                    <constraint firstAttribute="width" constant="175" id="l9u-Up-tfh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Library"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="23"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="44"/>
+                                        <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="photo.fill" catalog="system"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="leftImageWidth">
-                                        <real key="value" value="47"/>
+                                        <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="leftImageHeight">
-                                        <real key="value" value="41"/>
+                                        <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="leftImageColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,37 +144,27 @@
                                     <action selector="libraryPicked:" destination="dR8-5J-yyN" eventType="touchUpInside" id="3gN-K8-c9y"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8m-hI-Och">
-                                <rect key="frame" x="20" y="64" width="374" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-e2-dYm" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="20" y="471" width="374" height="197"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="197" id="2M0-P6-iev"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="7WL-0F-GG9" secondAttribute="trailing" constant="87" id="12x-e0-WE3"/>
-                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="nzo-U4-Af9" secondAttribute="trailing" constant="20" id="1MK-r5-kyW"/>
-                            <constraint firstItem="fUG-la-QgS" firstAttribute="top" secondItem="nzo-U4-Af9" secondAttribute="bottom" constant="8" id="4T8-v4-YaT"/>
-                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="g8m-hI-Och" secondAttribute="trailing" constant="20" id="9Pg-Vp-E3E"/>
-                            <constraint firstItem="7WL-0F-GG9" firstAttribute="top" secondItem="jqg-e2-dYm" secondAttribute="bottom" constant="8" id="A79-Mo-7Kc"/>
-                            <constraint firstItem="fUG-la-QgS" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="87" id="GOL-Ti-kcI"/>
-                            <constraint firstItem="jqg-e2-dYm" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="Lq6-HK-1JP"/>
-                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="jqg-e2-dYm" secondAttribute="trailing" constant="20" id="RA4-xp-2US"/>
-                            <constraint firstItem="nzo-U4-Af9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="SLk-0a-vTp"/>
-                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="fUG-la-QgS" secondAttribute="trailing" constant="87" id="V9a-7M-zQv"/>
-                            <constraint firstItem="g8m-hI-Och" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="ck5-mC-dhy"/>
-                            <constraint firstItem="jqg-e2-dYm" firstAttribute="top" secondItem="fUG-la-QgS" secondAttribute="bottom" constant="20" id="e3E-fw-hyV"/>
-                            <constraint firstItem="7WL-0F-GG9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="87" id="gfA-tm-g6i"/>
-                            <constraint firstItem="nzo-U4-Af9" firstAttribute="top" secondItem="g8m-hI-Och" secondAttribute="bottom" constant="60" id="kJY-Wc-CZd"/>
-                            <constraint firstItem="g8m-hI-Och" firstAttribute="top" secondItem="lvG-V3-Mak" secondAttribute="top" constant="20" id="nHy-SB-zmC"/>
+                            <constraint firstItem="fUG-la-QgS" firstAttribute="top" secondItem="nzo-U4-Af9" secondAttribute="bottom" constant="20" id="6AK-rt-aSA"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="jqg-e2-dYm" secondAttribute="trailing" constant="20" id="6Uw-bD-00X"/>
+                            <constraint firstItem="7WL-0F-GG9" firstAttribute="top" secondItem="jqg-e2-dYm" secondAttribute="bottom" constant="20" id="8TH-RB-Bwa"/>
+                            <constraint firstItem="nzo-U4-Af9" firstAttribute="top" secondItem="zgI-j6-Vtm" secondAttribute="bottom" constant="48" id="B0z-fP-CQw"/>
+                            <constraint firstItem="jqg-e2-dYm" firstAttribute="top" secondItem="zgI-j6-Vtm" secondAttribute="bottom" constant="48" id="EYy-OP-tUq"/>
+                            <constraint firstItem="g8m-hI-Och" firstAttribute="top" secondItem="lvG-V3-Mak" secondAttribute="top" constant="20" id="EoO-79-HWb"/>
+                            <constraint firstItem="zgI-j6-Vtm" firstAttribute="top" secondItem="ECQ-c4-b4a" secondAttribute="bottom" constant="20" id="FlS-mP-C0D"/>
+                            <constraint firstItem="nzo-U4-Af9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="IOX-cn-iFJ"/>
+                            <constraint firstItem="fUG-la-QgS" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="KBB-Z0-Rn0"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="g8m-hI-Och" secondAttribute="trailing" constant="20" id="LSZ-J1-lIz"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="zgI-j6-Vtm" secondAttribute="trailing" constant="20" id="P1h-dS-3V5"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="7WL-0F-GG9" secondAttribute="trailing" constant="20" id="Xtd-GO-Oet"/>
+                            <constraint firstItem="ECQ-c4-b4a" firstAttribute="top" secondItem="g8m-hI-Och" secondAttribute="bottom" constant="8" id="Yqh-w9-uq3"/>
+                            <constraint firstItem="g8m-hI-Och" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="bQw-9f-IaU"/>
+                            <constraint firstItem="ECQ-c4-b4a" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="bWt-nY-5R9"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="ECQ-c4-b4a" secondAttribute="trailing" constant="20" id="dJ1-0g-GAO"/>
+                            <constraint firstItem="ECQ-c4-b4a" firstAttribute="height" secondItem="GFO-EM-oEu" secondAttribute="height" multiplier="0.381696" id="jma-YC-uTq"/>
+                            <constraint firstItem="zgI-j6-Vtm" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="otY-om-1Q4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lvG-V3-Mak"/>
                     </view>
@@ -319,6 +330,7 @@
         <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="safari.fill" catalog="system" width="64" height="60"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
     </resources>
