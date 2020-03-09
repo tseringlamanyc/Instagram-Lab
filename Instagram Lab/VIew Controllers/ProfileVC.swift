@@ -9,6 +9,7 @@
 import UIKit
 import LGButton
 import FirebaseAuth
+import FirebaseFirestore
 import Kingfisher
 
 class ProfileVC: UIViewController {
@@ -16,6 +17,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var profileCV: UICollectionView!
     
     private lazy var imagePickerController: UIImagePickerController = {
         let ip = UIImagePickerController()
@@ -37,20 +40,58 @@ class ProfileVC: UIViewController {
         }
     }
     
+    private var listener: ListenerRegistration?
+    
+    private var posts = [InstaModel]() {
+        didSet {
+            self.profileCV.reloadData()
+            if posts.isEmpty {
+                profileCV.backgroundView = EmptyView(title: "Posts", message: "There are no posts yet")
+            } else {
+                profileCV.backgroundView = nil
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        listener = Firestore.firestore().collection(DatabaseServices.userPhotos).addSnapshotListener({ [weak self](snapshot, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Firestore error", message: "\(error.localizedDescription)")
+                }
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map {InstaModel(dictionary: $0.data())}
+                self?.posts = posts
+            }
+        })
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        listener?.remove()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userPic.isUserInteractionEnabled = true
         userPic.addGestureRecognizer(longPressGesture)
         userNameTF.delegate = self
+        profileCV.dataSource = self
+        profileCV.delegate = self
         updateUI()
     }
     
     private func updateUI() {
-       guard let user = Auth.auth().currentUser else {
+        guard let user = Auth.auth().currentUser else {
             return
         }
         userName.text = user.displayName
         userPic.kf.setImage(with: user.photoURL)
+        postLabel.text = "Posts: \(posts.count)"
     }
     
     @objc
@@ -146,5 +187,46 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         }
         selectedImage = image
         dismiss(animated: true)
+    }
+}
+
+extension ProfileVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as? ProfileCell else {
+            fatalError()
+        }
+        let aPost = posts[indexPath.row]
+        cell.updateCell(insta: aPost)
+        return cell 
+    }
+    
+    
+}
+
+extension ProfileVC: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let interspacing = CGFloat(5)
+        let maxwidth = UIScreen.main.bounds.size.width
+        let numOfItems = CGFloat(3)
+        let totalSpacing = CGFloat(numOfItems * interspacing)
+        let itemWidth = CGFloat((maxwidth - totalSpacing) / (numOfItems) )
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 3, bottom: 5, right: 3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }

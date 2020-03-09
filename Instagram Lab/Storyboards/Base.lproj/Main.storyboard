@@ -278,6 +278,50 @@
                                     <action selector="signOutPressed:" destination="Qn2-nl-O2Q" eventType="touchUpInside" id="4EZ-ib-26q"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxI-SO-Ico">
+                                <rect key="frame" x="178" y="177" width="216" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="v9z-O6-l1x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MPU-yH-dA7">
+                                <rect key="frame" x="0.0" y="275" width="414" height="538"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="byK-d8-VxK">
+                                    <size key="itemSize" width="212" height="236"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="4aX-SE-uZO" customClass="ProfileCell" customModule="Instagram_Lab" customModuleProvider="target">
+                                        <rect key="frame" x="101" y="0.0" width="212" height="236"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QEu-9b-rGN">
+                                            <rect key="frame" x="0.0" y="0.0" width="212" height="236"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDS-7T-c6D">
+                                                    <rect key="frame" x="0.0" y="0.0" width="212" height="236"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pDS-7T-c6D" firstAttribute="leading" secondItem="QEu-9b-rGN" secondAttribute="leading" constant="0.01" id="8ZM-0r-hyW"/>
+                                                <constraint firstAttribute="bottom" secondItem="pDS-7T-c6D" secondAttribute="bottom" constant="0.01" id="Kp6-zu-OJG"/>
+                                                <constraint firstItem="pDS-7T-c6D" firstAttribute="top" secondItem="QEu-9b-rGN" secondAttribute="top" constant="0.01" id="eLu-cq-C4x"/>
+                                                <constraint firstAttribute="trailing" secondItem="pDS-7T-c6D" secondAttribute="trailing" constant="0.01" id="voX-g3-Kwx"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="212" height="236"/>
+                                        <connections>
+                                            <outlet property="userPhoto" destination="pDS-7T-c6D" id="dmf-b9-QuP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VgR-oE-FBf">
                                 <rect key="frame" x="20" y="223" width="120" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -294,15 +338,24 @@
                             <constraint firstItem="F8M-13-b6e" firstAttribute="leading" secondItem="dgZ-Mc-N5p" secondAttribute="leading" constant="20" id="AHa-AX-QIt"/>
                             <constraint firstItem="fQU-eF-Ut4" firstAttribute="top" secondItem="dgZ-Mc-N5p" secondAttribute="top" id="Dgs-wQ-wBh"/>
                             <constraint firstItem="VgR-oE-FBf" firstAttribute="top" secondItem="XRV-K6-hre" secondAttribute="bottom" constant="8" id="QLr-rg-1O2"/>
+                            <constraint firstItem="MPU-yH-dA7" firstAttribute="top" secondItem="VgR-oE-FBf" secondAttribute="bottom" constant="18" id="RdZ-lf-xHJ"/>
+                            <constraint firstItem="RxI-SO-Ico" firstAttribute="top" secondItem="v8I-AD-rbd" secondAttribute="bottom" constant="48" id="Upw-Kt-Azu"/>
+                            <constraint firstItem="dgZ-Mc-N5p" firstAttribute="trailing" secondItem="RxI-SO-Ico" secondAttribute="trailing" constant="20" id="Zon-Uf-uue"/>
+                            <constraint firstItem="MPU-yH-dA7" firstAttribute="trailing" secondItem="dgZ-Mc-N5p" secondAttribute="trailing" constant="0.01" id="dn4-UY-Ga0"/>
                             <constraint firstItem="XRV-K6-hre" firstAttribute="leading" secondItem="dgZ-Mc-N5p" secondAttribute="leading" constant="20" id="f4V-Hz-JgK"/>
+                            <constraint firstItem="RxI-SO-Ico" firstAttribute="leading" secondItem="XRV-K6-hre" secondAttribute="trailing" constant="38" id="fob-om-xly"/>
                             <constraint firstItem="fQU-eF-Ut4" firstAttribute="leading" secondItem="F8M-13-b6e" secondAttribute="trailing" constant="8" id="kWJ-RR-npR"/>
                             <constraint firstItem="v8I-AD-rbd" firstAttribute="leading" secondItem="XRV-K6-hre" secondAttribute="trailing" constant="38" id="tJ0-L6-uOq"/>
+                            <constraint firstItem="MPU-yH-dA7" firstAttribute="leading" secondItem="dgZ-Mc-N5p" secondAttribute="leading" constant="0.01" id="tfX-xJ-FIF"/>
                             <constraint firstItem="F8M-13-b6e" firstAttribute="top" secondItem="dgZ-Mc-N5p" secondAttribute="top" id="uLW-d2-CPY"/>
+                            <constraint firstItem="MPU-yH-dA7" firstAttribute="bottom" secondItem="dgZ-Mc-N5p" secondAttribute="bottom" constant="0.01" id="y8o-9Z-GTa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dgZ-Mc-N5p"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="YSA-m7-aoY"/>
                     <connections>
+                        <outlet property="postLabel" destination="RxI-SO-Ico" id="Pjx-i5-ei7"/>
+                        <outlet property="profileCV" destination="MPU-yH-dA7" id="L7B-AT-CzJ"/>
                         <outlet property="userName" destination="F8M-13-b6e" id="2Xu-Hc-R6p"/>
                         <outlet property="userNameTF" destination="VgR-oE-FBf" id="acA-YE-oVA"/>
                         <outlet property="userPic" destination="XRV-K6-hre" id="AOw-yj-ECj"/>
