@@ -14,6 +14,7 @@
                 <tabBarController storyboardIdentifier="MainTab" automaticallyAdjustsScrollViewInsets="NO" id="ftD-FW-Iuy" customClass="MainTab" customModule="Instagram_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oq6-0G-NCz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -34,14 +35,137 @@
                     <view key="view" contentMode="scaleToFill" id="GFO-EM-oEu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzo-U4-Af9" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="165" width="374" height="198"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="L5f-Ap-aZ5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUG-la-QgS" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="87" y="371" width="240" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="6zz-n9-bmE"/>
+                                    <constraint firstAttribute="height" constant="80" id="ElQ-KU-eVY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Camera"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gradientRotation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="camera.fill" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageHeight">
+                                        <real key="value" value="41"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageWidth">
+                                        <real key="value" value="47"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftImageColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraPicked:" destination="dR8-5J-yyN" eventType="touchUpInside" id="wy4-3s-hTj"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WL-0F-GG9" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="87" y="676" width="240" height="74"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="YbA-ng-0Sf"/>
+                                    <constraint firstAttribute="width" constant="240" id="f8b-FZ-TLp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Library"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="photo.fill" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageWidth">
+                                        <real key="value" value="47"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageHeight">
+                                        <real key="value" value="41"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="leftImageColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="libraryPicked:" destination="dR8-5J-yyN" eventType="touchUpInside" id="3gN-K8-c9y"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8m-hI-Och">
+                                <rect key="frame" x="20" y="64" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-e2-dYm" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="471" width="374" height="197"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" id="2M0-P6-iev"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="7WL-0F-GG9" secondAttribute="trailing" constant="87" id="12x-e0-WE3"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="nzo-U4-Af9" secondAttribute="trailing" constant="20" id="1MK-r5-kyW"/>
+                            <constraint firstItem="fUG-la-QgS" firstAttribute="top" secondItem="nzo-U4-Af9" secondAttribute="bottom" constant="8" id="4T8-v4-YaT"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="g8m-hI-Och" secondAttribute="trailing" constant="20" id="9Pg-Vp-E3E"/>
+                            <constraint firstItem="7WL-0F-GG9" firstAttribute="top" secondItem="jqg-e2-dYm" secondAttribute="bottom" constant="8" id="A79-Mo-7Kc"/>
+                            <constraint firstItem="fUG-la-QgS" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="87" id="GOL-Ti-kcI"/>
+                            <constraint firstItem="jqg-e2-dYm" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="Lq6-HK-1JP"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="jqg-e2-dYm" secondAttribute="trailing" constant="20" id="RA4-xp-2US"/>
+                            <constraint firstItem="nzo-U4-Af9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="SLk-0a-vTp"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="fUG-la-QgS" secondAttribute="trailing" constant="87" id="V9a-7M-zQv"/>
+                            <constraint firstItem="g8m-hI-Och" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="ck5-mC-dhy"/>
+                            <constraint firstItem="jqg-e2-dYm" firstAttribute="top" secondItem="fUG-la-QgS" secondAttribute="bottom" constant="20" id="e3E-fw-hyV"/>
+                            <constraint firstItem="7WL-0F-GG9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="87" id="gfA-tm-g6i"/>
+                            <constraint firstItem="nzo-U4-Af9" firstAttribute="top" secondItem="g8m-hI-Och" secondAttribute="bottom" constant="60" id="kJY-Wc-CZd"/>
+                            <constraint firstItem="g8m-hI-Och" firstAttribute="top" secondItem="lvG-V3-Mak" secondAttribute="top" constant="20" id="nHy-SB-zmC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lvG-V3-Mak"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="camera.fill" catalog="system" id="ge3-4v-aKU"/>
+                    <connections>
+                        <outlet property="cameraView" destination="nzo-U4-Af9" id="EEl-ru-C9o"/>
+                        <outlet property="libraryView" destination="jqg-e2-dYm" id="Yr4-JX-CU5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giU-u3-J9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="220"/>
+            <point key="canvasLocation" x="1008.6956521739131" y="219.64285714285714"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Ef1-eW-7qD">
@@ -194,6 +318,7 @@
     <resources>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
         <image name="safari.fill" catalog="system" width="64" height="60"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
     </resources>

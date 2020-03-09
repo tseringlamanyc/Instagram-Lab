@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
     }
     
     private func startLottie() {
-        let animation = Animation.named("camera")
+        let animation = Animation.named("loading")
         login.animation = animation
         login.loopMode = .loop
         login.play()
@@ -85,6 +85,8 @@ class LoginVC: UIViewController {
             }
         }
     }
+    
+    
     
     private func navigateToMainView() {
         UIViewController.showVC(storyboard: "Main", VCid: "MainTab")
