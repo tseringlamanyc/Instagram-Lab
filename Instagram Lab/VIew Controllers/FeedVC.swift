@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
+
 class FeedVC: UIViewController {
 
     @IBOutlet weak var feedCV: UICollectionView!
@@ -51,6 +52,7 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         feedCV.dataSource = self
         feedCV.delegate = self
+        navigationItem.title = "FakerGram"
     }
 }
 
@@ -70,5 +72,14 @@ extension FeedVC: UICollectionViewDataSource {
 }
 
 extension FeedVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxsize: CGSize = UIScreen.main.bounds.size
+        let width: CGFloat = maxsize.width
+        let height: CGFloat = maxsize.height * 0.45
+        return CGSize(width: width, height: height)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
 }

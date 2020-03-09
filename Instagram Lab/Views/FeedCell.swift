@@ -8,18 +8,23 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 
 class FeedCell: UICollectionViewCell {
     
-    @IBOutlet weak var profilePhoto: DesignableImageView!
+    @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var photoCaption: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
     public func updateCell(insta: InstaModel) {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
         userName.text = insta.userName
         photoCaption.text = insta.photoCaption
-        profilePhoto.kf.setImage(with: URL(string: insta.userURL))
+        profilePhoto.kf.setImage(with: user.photoURL)
         userPhoto.kf.setImage(with: URL(string: insta.photoURL))
     }
 }

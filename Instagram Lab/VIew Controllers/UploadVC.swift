@@ -39,7 +39,6 @@ class UploadVC: UIViewController {
         super.viewDidLoad()
         startLottie()
         startLottie2()
-        captionTF.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +81,7 @@ class UploadVC: UIViewController {
         }
         
         guard let displayName = Auth.auth().currentUser?.displayName else {
-            showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Missing Fields")
+            showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Profile Incomplete")
             return
         }
         
@@ -95,6 +94,9 @@ class UploadVC: UIViewController {
                     self?.showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Couldnt create:\(error.localizedDescription)")
                 }
             case .success(let documentId):
+                DispatchQueue.main.async {
+                    self?.showStatusAlert(withImage: UIImage(systemName: "star.fill"), title: "Success", message: "Photo posted")
+                }
                 self?.uploadPhoto(image: resizeImage, documentId: documentId)
             }
         }
@@ -141,9 +143,3 @@ extension UploadVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
 }
 
-extension UploadVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}

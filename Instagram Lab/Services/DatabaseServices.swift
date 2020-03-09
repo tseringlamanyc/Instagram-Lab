@@ -25,7 +25,6 @@ class DatabaseServices {
                 print("Error creating photo: \(error)")
                 completion(.failure(error))
             } else {
-                print("Photo created")
                 completion(.success(document.documentID))
             }
         }
