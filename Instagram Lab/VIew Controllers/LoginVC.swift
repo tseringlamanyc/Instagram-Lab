@@ -80,14 +80,14 @@ class LoginVC: UIViewController {
                 }
             case .success(_):
                 DispatchQueue.main.async {
-                    self?.navigateToMainView()
+                    self?.showStatusAlert(withImage: UIImage(systemName: "star.fill"), title: "Success", message: "Account Created")
                 }
             }
         }
     }
     
     private func navigateToMainView() {
-        UIViewController.showVC(storyboard: "Main", VCid: "MainVC")
+        UIViewController.showVC(storyboard: "Main", VCid: "MainTab")
     }
     
 }

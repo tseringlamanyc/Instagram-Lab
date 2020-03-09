@@ -49,14 +49,47 @@
                     <view key="view" contentMode="scaleToFill" id="sYR-vF-ZXk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQU-eF-Ut4" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="292" y="44" width="102" height="41"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="DkP-6e-1F7"/>
+                                    <constraint firstAttribute="width" constant="102" id="r7w-05-ltg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sign Out"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="0.92133218049999999" green="0.6472965691" blue="0.63276789479999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="Qn2-nl-O2Q" eventType="touchUpInside" id="4EZ-ib-26q"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fQU-eF-Ut4" firstAttribute="top" secondItem="dgZ-Mc-N5p" secondAttribute="top" id="7dO-ZH-lcJ"/>
+                            <constraint firstItem="dgZ-Mc-N5p" firstAttribute="trailing" secondItem="fQU-eF-Ut4" secondAttribute="trailing" constant="20" id="U6N-qg-1MI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dgZ-Mc-N5p"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="YSA-m7-aoY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhV-dT-GMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="976"/>
+            <point key="canvasLocation" x="1005.7971014492755" y="975.66964285714278"/>
         </scene>
         <!--Feed-->
         <scene sceneID="rcq-f9-SNx">

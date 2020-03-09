@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import LGButton
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    @IBAction func signOutPressed(_ sender: LGButton) {
+        do {
+            try Auth.auth().signOut()
+            UIViewController.showVC(storyboard: "Login", VCid: "LoginVC")
+        } catch {
+            DispatchQueue.main.async {
+                self.showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Couldnt sign out")
+            }
+        }
     }
 }
