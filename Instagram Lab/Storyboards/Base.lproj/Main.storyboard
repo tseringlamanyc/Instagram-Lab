@@ -99,7 +99,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c4-b4a">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c4-b4a">
                                 <rect key="frame" x="20" y="113" width="374" height="342"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgI-j6-Vtm">
@@ -144,6 +144,18 @@
                                     <action selector="libraryPicked:" destination="dR8-5J-yyN" eventType="touchUpInside" id="3gN-K8-c9y"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUI-A4-AHs">
+                                <rect key="frame" x="358" y="31" width="36" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="u2w-ej-1Yc"/>
+                                </constraints>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postPressed:" destination="dR8-5J-yyN" eventType="touchUpInside" id="PQ0-gf-1Qr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -151,12 +163,14 @@
                             <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="jqg-e2-dYm" secondAttribute="trailing" constant="20" id="6Uw-bD-00X"/>
                             <constraint firstItem="7WL-0F-GG9" firstAttribute="top" secondItem="jqg-e2-dYm" secondAttribute="bottom" constant="20" id="8TH-RB-Bwa"/>
                             <constraint firstItem="nzo-U4-Af9" firstAttribute="top" secondItem="zgI-j6-Vtm" secondAttribute="bottom" constant="48" id="B0z-fP-CQw"/>
+                            <constraint firstItem="eUI-A4-AHs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lvG-V3-Mak" secondAttribute="leading" symbolic="YES" id="Bf1-zQ-SSA"/>
                             <constraint firstItem="jqg-e2-dYm" firstAttribute="top" secondItem="zgI-j6-Vtm" secondAttribute="bottom" constant="48" id="EYy-OP-tUq"/>
                             <constraint firstItem="g8m-hI-Och" firstAttribute="top" secondItem="lvG-V3-Mak" secondAttribute="top" constant="20" id="EoO-79-HWb"/>
                             <constraint firstItem="zgI-j6-Vtm" firstAttribute="top" secondItem="ECQ-c4-b4a" secondAttribute="bottom" constant="20" id="FlS-mP-C0D"/>
                             <constraint firstItem="nzo-U4-Af9" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="IOX-cn-iFJ"/>
                             <constraint firstItem="fUG-la-QgS" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="KBB-Z0-Rn0"/>
                             <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="g8m-hI-Och" secondAttribute="trailing" constant="20" id="LSZ-J1-lIz"/>
+                            <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="eUI-A4-AHs" secondAttribute="trailing" constant="20" id="NT9-y0-K7W"/>
                             <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="zgI-j6-Vtm" secondAttribute="trailing" constant="20" id="P1h-dS-3V5"/>
                             <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="7WL-0F-GG9" secondAttribute="trailing" constant="20" id="Xtd-GO-Oet"/>
                             <constraint firstItem="ECQ-c4-b4a" firstAttribute="top" secondItem="g8m-hI-Och" secondAttribute="bottom" constant="8" id="Yqh-w9-uq3"/>
@@ -165,13 +179,16 @@
                             <constraint firstItem="lvG-V3-Mak" firstAttribute="trailing" secondItem="ECQ-c4-b4a" secondAttribute="trailing" constant="20" id="dJ1-0g-GAO"/>
                             <constraint firstItem="ECQ-c4-b4a" firstAttribute="height" secondItem="GFO-EM-oEu" secondAttribute="height" multiplier="0.381696" id="jma-YC-uTq"/>
                             <constraint firstItem="zgI-j6-Vtm" firstAttribute="leading" secondItem="lvG-V3-Mak" secondAttribute="leading" constant="20" id="otY-om-1Q4"/>
+                            <constraint firstItem="eUI-A4-AHs" firstAttribute="top" secondItem="GFO-EM-oEu" secondAttribute="top" constant="31" id="xQU-cS-1dc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lvG-V3-Mak"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="camera.fill" catalog="system" id="ge3-4v-aKU"/>
                     <connections>
                         <outlet property="cameraView" destination="nzo-U4-Af9" id="EEl-ru-C9o"/>
+                        <outlet property="captionTF" destination="zgI-j6-Vtm" id="rfl-NC-Yo1"/>
                         <outlet property="libraryView" destination="jqg-e2-dYm" id="Yr4-JX-CU5"/>
+                        <outlet property="uploadPhoto" destination="ECQ-c4-b4a" id="WDh-cN-KXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giU-u3-J9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
