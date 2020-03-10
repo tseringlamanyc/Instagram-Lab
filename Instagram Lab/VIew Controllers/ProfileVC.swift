@@ -63,7 +63,11 @@ class ProfileVC: UIViewController {
                 }
             } else if let snapshot = snapshot {
                 let posts = snapshot.documents.map {InstaModel(dictionary: $0.data())}
-                self?.posts = posts
+                DispatchQueue.main.async {
+                    self?.posts = posts
+                    self?.postLabel.text = "Posts: \(posts.count)"
+                }
+                
             }
         })
         
@@ -91,7 +95,6 @@ class ProfileVC: UIViewController {
         }
         userName.text = user.displayName
         userPic.kf.setImage(with: user.photoURL)
-        postLabel.text = "Posts: \(posts.count)"
     }
     
     @objc
