@@ -19,6 +19,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var profileCV: UICollectionView!
+    @IBOutlet weak var postNum: UILabel!
+    
     
     private lazy var imagePickerController: UIImagePickerController = {
         let ip = UIImagePickerController()
@@ -65,7 +67,7 @@ class ProfileVC: UIViewController {
                 let posts = snapshot.documents.map {InstaModel(dictionary: $0.data())}
                 DispatchQueue.main.async {
                     self?.posts = posts
-                    self?.postLabel.text = "Posts: \(posts.count)"
+                    self?.postNum.text = "\(posts.count)"
                 }
                 
             }

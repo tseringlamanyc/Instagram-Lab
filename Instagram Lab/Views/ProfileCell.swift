@@ -13,6 +13,8 @@ class ProfileCell: UICollectionViewCell {
     
     @IBOutlet weak var userPhoto: UIImageView!
     
+    
+    
     public func updateCell(insta: InstaModel) {
         userPhoto.kf.setImage(with: URL(string: insta.photoURL))
     }

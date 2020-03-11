@@ -16,6 +16,8 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var photoCaption: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
     
     public func updateCell(insta: InstaModel) {
         guard let user = Auth.auth().currentUser else {
@@ -26,5 +28,6 @@ class FeedCell: UICollectionViewCell {
         photoCaption.text = insta.photoCaption
         profilePhoto.kf.setImage(with: user.photoURL)
         userPhoto.kf.setImage(with: URL(string: insta.photoURL))
+        locationLabel.text = insta.location
     }
 }

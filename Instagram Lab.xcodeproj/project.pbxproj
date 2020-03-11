@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		241A9DDE6D6230CF64AB55FC /* Pods_Instagram_Lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA6FFA5D9D3A90098404D0C /* Pods_Instagram_Lab.framework */; };
+		5207EC3A241829240027A547 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207EC39241829240027A547 /* LocationVC.swift */; };
+		5207EC3C24182A960027A547 /* CorelocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207EC3B24182A960027A547 /* CorelocationServices.swift */; };
+		5207EC3E241833CB0027A547 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5207EC3D241833CB0027A547 /* Location.storyboard */; };
 		5211452A2415477300758611 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521145292415477300758611 /* GoogleService-Info.plist */; };
 		5213C4232415EE3200564434 /* photolib.json in Resources */ = {isa = PBXBuildFile; fileRef = 5213C4222415EE3200564434 /* photolib.json */; };
 		5213C4252415EEAC00564434 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 5213C4242415EEAC00564434 /* camera.json */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5207EC39241829240027A547 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		5207EC3B24182A960027A547 /* CorelocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorelocationServices.swift; sourceTree = "<group>"; };
+		5207EC3D241833CB0027A547 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		521145292415477300758611 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5213C4222415EE3200564434 /* photolib.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = photolib.json; sourceTree = "<group>"; };
 		5213C4242415EEAC00564434 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 				5224F9802415A8D100B124F4 /* FeedVC.swift */,
 				5224F9822415A8E000B124F4 /* UploadVC.swift */,
 				5224F9842415A8F900B124F4 /* ProfileVC.swift */,
+				5207EC39241829240027A547 /* LocationVC.swift */,
 			);
 			path = "VIew Controllers";
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 				5224F96B2415526200B124F4 /* AuthServices.swift */,
 				5224F96D2415527200B124F4 /* DatabaseServices.swift */,
 				5224F96F2415528100B124F4 /* StorageServices.swift */,
+				5207EC3B24182A960027A547 /* CorelocationServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 			children = (
 				52CF601E2411A89D00F842C4 /* Main.storyboard */,
 				5224F9672415522F00B124F4 /* Login.storyboard */,
+				5207EC3D241833CB0027A547 /* Location.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 				52CF60252411A8A800F842C4 /* LaunchScreen.storyboard in Resources */,
 				5211452A2415477300758611 /* GoogleService-Info.plist in Resources */,
 				5213C4252415EEAC00564434 /* camera.json in Resources */,
+				5207EC3E241833CB0027A547 /* Location.storyboard in Resources */,
 				52CF60222411A8A800F842C4 /* Assets.xcassets in Resources */,
 				5213C4232415EE3200564434 /* photolib.json in Resources */,
 				5224F9682415522F00B124F4 /* Login.storyboard in Resources */,
@@ -334,6 +344,7 @@
 				52CF60192411A89D00F842C4 /* AppDelegate.swift in Sources */,
 				5224F9852415A8F900B124F4 /* ProfileVC.swift in Sources */,
 				52CF601B2411A89D00F842C4 /* SceneDelegate.swift in Sources */,
+				5207EC3C24182A960027A547 /* CorelocationServices.swift in Sources */,
 				5224F9882415AEFF00B124F4 /* Glitch Label.swift in Sources */,
 				5224F98E2415E25300B124F4 /* Empty.swift in Sources */,
 				5224F96E2415527200B124F4 /* DatabaseServices.swift in Sources */,
@@ -343,6 +354,7 @@
 				5224F9702415528100B124F4 /* StorageServices.swift in Sources */,
 				5224F9832415A8E000B124F4 /* UploadVC.swift in Sources */,
 				5224F96A2415524D00B124F4 /* LoginVC.swift in Sources */,
+				5207EC3A241829240027A547 /* LocationVC.swift in Sources */,
 				5224F97924155AAB00B124F4 /* UIVC.swift in Sources */,
 				5224F96C2415526200B124F4 /* AuthServices.swift in Sources */,
 				5276A6522416E994002D07F4 /* ProfileCell.swift in Sources */,

@@ -18,6 +18,27 @@ class UploadVC: UIViewController {
     @IBOutlet weak var libraryView: AnimationView!
     @IBOutlet weak var uploadPhoto: UIImageView!
     @IBOutlet weak var captionTF: UITextField!
+    @IBOutlet weak var location: UILabel!
+    
+    
+    
+    private var locationVC: LocationVC = {
+      let storyboard = UIStoryboard(name: "Location", bundle: nil)
+        let locationVC = storyboard.instantiateViewController(identifier: "Location") as! LocationVC
+        return locationVC
+    }()
+    
+    private lazy var searchController: UISearchController = {
+      let sc = UISearchController(searchResultsController: locationVC)
+      sc.searchResultsUpdater = locationVC
+      sc.hidesNavigationBarDuringPresentation = false
+      sc.searchBar.placeholder = "Picture Location"
+      sc.dimsBackgroundDuringPresentation = false
+      sc.obscuresBackgroundDuringPresentation = false
+      definesPresentationContext = true
+      sc.searchBar.autocapitalizationType = .none
+      return sc
+    }()
     
     private lazy var imagePickerController: UIImagePickerController = {
         let ip = UIImagePickerController()
@@ -39,6 +60,11 @@ class UploadVC: UIViewController {
         super.viewDidLoad()
         startLottie()
         startLottie2()
+        captionTF.delegate = self
+        navigationItem.searchController = searchController
+        locationVC.delegate = self
+        navigationItem.title = "Choose a source"
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +101,7 @@ class UploadVC: UIViewController {
     
     
     @IBAction func postPressed(_ sender: UIButton) {
-        guard let caption = captionTF.text, !caption.isEmpty, let selectedImage = selectedImage else {
+        guard let caption = captionTF.text, !caption.isEmpty, let selectedImage = selectedImage, let location = location.text, !location.isEmpty else {
             showStatusAlert(withImage: UIImage(systemName: "exclamationmark.triangle.fill"), title: "Fail", message: "Missing Fields")
             return
         }
@@ -87,7 +113,7 @@ class UploadVC: UIViewController {
         
         let resizeImage = UIImage.resizeImage(originalImage: selectedImage, rect: uploadPhoto.bounds)
         
-        dbService.createPhoto(userName: displayName, photoCaption: caption) { [weak self] (result) in
+        dbService.createPhoto(userName: displayName, photoCaption: caption, location: location) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -98,6 +124,8 @@ class UploadVC: UIViewController {
                     self?.showStatusAlert(withImage: UIImage(systemName: "star.fill"), title: "Success", message: "Photo posted")
                 }
                 self?.uploadPhoto(image: resizeImage, documentId: documentId)
+                self?.uploadPhoto.image = nil
+                self?.captionTF.text = ""
             }
         }
         
@@ -131,6 +159,8 @@ class UploadVC: UIViewController {
         }
     }
     
+    
+
 }
 
 extension UploadVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -143,3 +173,20 @@ extension UploadVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     }
 }
 
+extension UploadVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension UploadVC: LocationVCDelegate {
+    func didSelect(location: String, VC: LocationVC) {
+        self.location.text = location
+    }
+    
+    
+    func didScroll(VC: LocationVC) {
+        searchController.searchBar.resignFirstResponder()
+    }
+}
